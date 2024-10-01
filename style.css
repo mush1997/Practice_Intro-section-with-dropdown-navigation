@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Epilogue;
+  font-size: 18px;
+}
+
+@keyframes list {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes shadow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+body {
+  padding: 30px 40px 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+}
+body main {
+  margin-bottom: 20px;
+}
+body main header {
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+}
+body main header #menuBtn,
+body main header .wrapper {
+  display: none;
+}
+body main header .logo {
+  margin-right: 60px;
+  width: 10%;
+  min-width: 100px;
+  max-width: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body main header .menu {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main header .menu ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+body main header .menu ul button {
+  margin-left: 10px;
+  padding: 10px 14px;
+  background-color: hsl(0, 0%, 98%);
+  border-radius: 16px;
+  border: 1px solid hsl(0, 0%, 41%);
+  outline: none;
+  font-size: 1rem;
+  color: hsl(0, 0%, 41%);
+}
+body main header .menu ul button:hover {
+  cursor: pointer;
+  border-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 8%);
+}
+body main header .menu ul li {
+  display: inline-block;
+  margin: 0 10px;
+  color: hsl(0, 0%, 41%);
+}
+body main header .menu ul li span {
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+body main header .menu ul li span .arrow {
+  margin-left: 6px;
+  vertical-align: middle;
+}
+body main header .menu ul li span .hide {
+  display: none;
+}
+body main header .menu ul li span:hover {
+  cursor: pointer;
+  color: hsl(0, 0%, 8%);
+}
+body main header .menu ul li span:hover .arrow {
+  filter: brightness(0%);
+}
+body main header .menu ul li.dropdown {
+  position: relative;
+}
+body main header .menu ul li.dropdown .list1,
+body main header .menu ul li.dropdown .list2 {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 16px 1px #ccc;
+  position: absolute;
+  visibility: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body main header .menu ul li.dropdown .list1 p,
+body main header .menu ul li.dropdown .list2 p {
+  width: 100%;
+  margin: 8px 0;
+  padding: 0 6px;
+  font-size: 0.9rem;
+}
+body main header .menu ul li.dropdown .list1 p img,
+body main header .menu ul li.dropdown .list2 p img {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+body main header .menu ul li.dropdown .list1.show,
+body main header .menu ul li.dropdown .list2.show {
+  visibility: visible;
+  animation: list 1.2s forwards;
+}
+body main header .menu ul li.dropdown .list1 {
+  width: 140px;
+  right: 0;
+  top: 30px;
+}
+body main header .menu ul li.dropdown .list2 {
+  width: 110px;
+  left: 0;
+  top: 30px;
+}
+body main section {
+  padding: 20px 60px;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+body main section .heroImg {
+  order: 1;
+  flex-basis: 45%;
+  background-image: url("images/image-hero-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+body main section .content {
+  flex-basis: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main section .content hgroup {
+  padding-left: 80px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+body main section .content hgroup h1 {
+  width: 75%;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 8%);
+}
+body main section .content hgroup p {
+  margin: 50px 0 40px 0;
+  width: 85%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 41%);
+  line-height: 1.4;
+}
+body main section .content hgroup button {
+  padding: 12px 20px;
+  background-color: hsl(0, 0%, 8%);
+  border-radius: 12px;
+  border: 1px solid hsl(0, 0%, 41%);
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 98%);
+}
+body main section .content hgroup button:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 98%);
+  border-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 8%);
+}
+body main section .content .clients {
+  padding-left: 80px;
+  width: 100%;
+}
+body main section .content .clients img {
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  body main section {
+    padding: 20px;
+  }
+  body main section .content hgroup {
+    padding-left: 20px;
+  }
+  body main section .content .clients {
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 30px;
+    padding-bottom: 0;
+  }
+  body main header .logo {
+    margin-right: 30px;
+  }
+  body main section {
+    padding: 20px 0;
+  }
+  body main section .content hgroup {
+    padding-left: 0;
+  }
+  body main section .content hgroup h1 {
+    width: 95%;
+  }
+  body main section .content hgroup p {
+    width: 95%;
+  }
+  body main section .content .clients {
+    padding-left: 0;
+  }
+  body main section .content .clients img {
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 880px) {
+  body::before {
+    content: "";
+    width: 100%;
+    background-color: hsl(0, 0%, 8%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+  }
+  body.shadow::before {
+    display: block;
+    animation: shadow 0.8s forwards;
+  }
+  body {
+    position: relative;
+  }
+  body main header {
+    justify-content: space-between;
+  }
+  body main header #menuBtn,
+  body main header #closeBtn {
+    display: inline-block;
+    padding: 4px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    vertical-align: middle;
+  }
+  body main header #menuBtn:hover,
+  body main header #closeBtn:hover {
+    cursor: pointer;
+  }
+  body main header .logo {
+    margin-right: 0;
+    width: 30%;
+    min-width: 90px;
+    max-width: 120px;
+  }
+  body main header .menu {
+    display: none;
+    width: 55%;
+    min-width: 180px;
+    max-width: 280px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: hsl(0, 0%, 98%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+  body main header .menu .wrapper {
+    padding: 30px 30px 0 0;
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+  body main header .menu .wrapper #closeBtn {
+    width: 36px;
+    vertical-align: middle;
+  }
+  body main header .menu ul {
+    padding: 10px 40px;
+    width: 100%;
+    display: block;
+  }
+  body main header .menu ul button {
+    margin-left: 0;
+    width: 100%;
+  }
+  body main header .menu ul li {
+    display: block;
+    margin: 30px 0;
+  }
+  body main header .menu ul li.dropdown .list1,
+  body main header .menu ul li.dropdown .list2 {
+    display: none;
+    border-radius: 0;
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: none;
+    position: static;
+  }
+  body main header .menu ul li.dropdown .list1 p,
+  body main header .menu ul li.dropdown .list2 p {
+    margin: 16px 0;
+    padding: 0;
+  }
+  body main header .menu ul li.dropdown .list1.show,
+  body main header .menu ul li.dropdown .list2.show {
+    display: block;
+  }
+  body main header .menu ul li#login {
+    text-align: center;
+  }
+  body main header .menu.open {
+    display: block;
+    animation: list 0.8s forwards;
+  }
+  body main section {
+    padding: 0;
+    height: auto;
+    min-height: 700px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  body main section .heroImg {
+    order: 0;
+    flex-basis: 250px;
+    flex-grow: 1;
+    background-image: url("images/image-hero-mobile.png");
+    margin-bottom: 40px;
+  }
+  body main section .content {
+    flex-basis: 260px;
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+  body main section .content hgroup {
+    padding: 0 40px;
+    text-align: center;
+  }
+  body main section .content hgroup h1 {
+    width: 100%;
+  }
+  body main section .content hgroup p {
+    margin: 30px 0;
+    width: 100%;
+  }
+  body main section .content hgroup button {
+    padding: 16px 20px;
+  }
+  body main section .content .clients {
+    text-align: center;
+  }
+  body main section .content .clients img {
+    margin: 0 12px;
+  }
+}
+@media screen and (max-width: 600px) {
+  body main section .content hgroup {
+    padding: 0 10px;
+  }
+  body main section .content .clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  body main section .content .clients img {
+    margin: 10px;
+    max-width: 100px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}/*# sourceMappingURL=style.css.map */
